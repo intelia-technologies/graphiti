@@ -276,7 +276,7 @@ async def edge_fulltext_search(
             """
             + get_entity_edge_return_query(driver.provider)
             + """
-            ORDER BY score DESC, uuid ASC
+            ORDER BY score DESC, e.uuid ASC
             LIMIT $limit
             """
         )
@@ -423,7 +423,7 @@ async def edge_similarity_search(
             """
             + get_entity_edge_return_query(driver.provider)
             + """
-            ORDER BY score DESC, uuid ASC
+            ORDER BY score DESC, e.uuid ASC
             LIMIT $limit
             """
         )
@@ -765,7 +765,7 @@ async def node_similarity_search(
             """
             + get_entity_node_return_query(driver.provider)
             + """
-            ORDER BY score DESC, uuid ASC
+            ORDER BY score DESC, n.uuid ASC
             LIMIT $limit
             """
         )
@@ -952,7 +952,7 @@ async def episode_fulltext_search(
             """
             + EPISODIC_NODE_RETURN
             + """
-            ORDER BY score DESC, uuid ASC
+            ORDER BY score DESC, e.uuid ASC
             LIMIT $limit
             """
         )
@@ -1041,7 +1041,7 @@ async def community_fulltext_search(
             """
             + COMMUNITY_NODE_RETURN
             + """
-            ORDER BY score DESC, uuid ASC
+            ORDER BY score DESC, c.uuid ASC
             LIMIT $limit
             """
         )
@@ -1154,7 +1154,7 @@ async def community_similarity_search(
             """
             + COMMUNITY_NODE_RETURN
             + """
-            ORDER BY score DESC, uuid ASC
+            ORDER BY score DESC, c.uuid ASC
             LIMIT $limit
             """
         )
